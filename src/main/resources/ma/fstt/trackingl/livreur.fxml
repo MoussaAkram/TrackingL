@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-stylesheet vista.css?>
+
+<VBox fx:id="livreurVBox" alignment="CENTER_LEFT" prefHeight="1000" prefWidth="598.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.fstt.trackingl.LivreurController">
+    <VBox fx:id="commandVBox" alignment="CENTER_LEFT" prefHeight="1000.0" prefWidth="598.0" style="-fx-background-color: 0;">
+
+        <HBox prefHeight="204.0" prefWidth="598.0" spacing="50.0" style="-fx-background-color: #D1E5B6;">
+            <children>
+                <Button alignment="TOP_RIGHT" defaultButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-alignment: center-left; -fx-background-color: #FFF5D1;" text="Livreur">
+                    <padding>
+                        <Insets bottom="15.0" left="30.0" right="20.0" top="15.0" />
+                    </padding>
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="text-align: justify" />
+                        <String fx:value="text-justify: inter-word" />
+                    </styleClass>
+                    <effect>
+                        <DropShadow color="BLACK" offsetX="5" offsetY="5" radius="10" />
+                    </effect>
+                </Button>
+
+                <Button alignment="TOP_RIGHT" focusTraversable="false" mnemonicParsing="false" onAction="#switchProduct" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #FFF5D1;" text="Product">
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                    </HBox.margin>
+                    <padding>
+                        <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Button>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchCommand" prefHeight="50.0" prefWidth="122.0" style="-fx-alignment: center-left; -fx-background-color: #FFF5D1;" text="Command">
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0" />
+                    </HBox.margin>
+                    <padding>
+                        <Insets bottom="15.0" left="30.0" right="20.0" top="15.0" />
+                    </padding>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font></Button>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </HBox>
+        <VBox alignment="CENTER_LEFT" prefHeight="560.0" prefWidth="598.0" spacing="20.0" style="-fx-background-color: #01FD8E;">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label text="Nom :" />
+                <TextField fx:id="nom" />
+                <Label text="Telephone" />
+                <TextField fx:id="tele" />
+                <HBox prefHeight="34.0" prefWidth="481.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="ok" mnemonicParsing="false" onAction="#onSaveButtonClick" text="Save" />
+                        <Button fx:id="update" mnemonicParsing="false" onAction="#onUpdateButtonClick" text="Update" />
+                        <Button fx:id="Delete" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete" />
+                        <Button fx:id="getone" mnemonicParsing="false" onAction="#onGetOneLivreur" text="onelivreur" />
+                        <Button fx:id="getAll" mnemonicParsing="false" onAction="#onShowAll" prefHeight="25.0" prefWidth="53.0" text="All" />
+                    </children>
+                </HBox>
+                <TableView fx:id="mytable" prefHeight="143.0" prefWidth="438.0">
+                    <columns>
+                        <TableColumn fx:id="col_id" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="col_nom" prefWidth="100.0" text="nom" />
+                        <TableColumn fx:id="col_tele" prefWidth="150.0" text="telephone" />
+                    </columns>
+                </TableView>
+            </children>
+
+        </VBox>
+    </VBox>
+</VBox>

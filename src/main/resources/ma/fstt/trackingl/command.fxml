@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.scene.effect.DropShadow?>
+<VBox fx:id="livreurVBox" alignment="CENTER_LEFT" prefHeight="1000.0" prefWidth="598.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.fstt.trackingl.CommandController">
+    <VBox fx:id="productVBox" alignment="CENTER_LEFT" prefHeight="1000.0" prefWidth="598.0" style="-fx-background-color: 0;">
+        <VBox fx:id="chartVBox" alignment="CENTER_LEFT" prefHeight="1000.0" prefWidth="598.0" style="-fx-background-color: 0;">
+    <HBox prefHeight="204.0" prefWidth="598.0" spacing="50.0" style="-fx-background-color: #D1E5B6;">
+        <children>
+            <Button alignment="TOP_RIGHT" focusTraversable="false" mnemonicParsing="false" onAction="#switchLivreur" prefHeight="50.0" prefWidth="121.0" style="-fx-alignment: center-left; -fx-background-color: #FFF5D1;" text="Livreur">
+                <padding>
+                    <Insets bottom="15.0" left="30.0" right="20.0" top="15.0" />
+                </padding>
+                <HBox.margin>
+                    <Insets left="20.0" right="10.0" />
+                </HBox.margin>
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+                <styleClass>
+                    <String fx:value="text-align: justify" />
+                    <String fx:value="text-justify: inter-word" />
+                </styleClass></Button>
+            <Button alignment="TOP_RIGHT" focusTraversable="false" mnemonicParsing="false" onAction="#switchProduct" prefHeight="50.0" prefWidth="125.0" style="-fx-background-color: #FFF5D1;" text="Product">
+                <HBox.margin>
+                    <Insets left="20.0" right="10.0" />
+                </HBox.margin>
+                <padding>
+                    <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+                </padding>
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font></Button>
+            <Button defaultButton="true" focusTraversable="false" mnemonicParsing="false" prefHeight="50.0" prefWidth="122.0" style="-fx-alignment: center-left; -fx-background-color: #FFF5D1;" text="Command">
+                <HBox.margin>
+                    <Insets left="20.0" right="10.0" />
+                </HBox.margin>
+                <padding>
+                    <Insets bottom="15.0" left="30.0" right="20.0" top="15.0" />
+                </padding>
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+                <effect>
+                    <DropShadow color="BLACK" offsetX="5" offsetY="5" radius="10"/>
+                </effect>
+            </Button>
+        </children>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <padding>
+            <Insets bottom="10.0" top="10.0" />
+        </padding>
+    </HBox>
+        <VBox alignment="CENTER_LEFT" prefHeight="560.0" prefWidth="598.0" spacing="20.0" style="-fx-background-color: #01FD8E;">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+         <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <children>
+                      <Label lineSpacing="50.0" text="Date_debut :" />
+                      <TextField fx:id="date_debut" prefHeight="25.0" prefWidth="376.0" />
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0" spacing="35.0">
+            <children>
+                      <Label lineSpacing="50.0" text="Date_fin :" />
+                      <TextField fx:id="date_fin" prefHeight="25.0" prefWidth="378.0" />
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0" spacing="60.0">
+            <children>
+                      <Label text="Km :" />
+                      <TextField fx:id="km" prefHeight="25.0" prefWidth="382.0" />
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0" spacing="45.0">
+            <children>
+                      <Label text="Client :" />
+                      <TextField fx:id="client" prefHeight="25.0" prefWidth="383.0" />
+            </children></HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0" spacing="28.0">
+            <children>
+                      <Label text="id_livreur :" />
+                      <TextField fx:id="id_livreur" prefHeight="25.0" prefWidth="386.0" />
+            </children></HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <children>
+                      <Label text="id_product :" />
+                      <TextField fx:id="id_product" prefHeight="25.0" prefWidth="386.0" />
+            </children>
+         </HBox>
+                <HBox prefHeight="34.0" prefWidth="481.0" spacing="30.0">
+                    <children>
+                        <Button fx:id="ok" mnemonicParsing="false" onAction="#onSaveButtonClick" text="Save" />
+                        <Button fx:id="update" mnemonicParsing="false" onAction="#onUpdateButtonClick" text="Update" />
+                        <Button fx:id="Delete" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#switchDashboard" style="-fx-background-color: #EAFD62;" text="Chart" textFill="#e30bbb">
+                        <HBox.margin>
+                           <Insets left="200.0" />
+                        </HBox.margin>
+                        <font>
+                           <Font name="System Bold" size="14.0" />
+                        </font></Button>
+                    </children>
+                </HBox>
+                <TableView fx:id="mytable2" prefHeight="250.0" prefWidth="558.0">
+                    <columns>
+                        <TableColumn fx:id="col_id" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="col_date_debut" prefWidth="75.0" text="date_debut" />
+                        <TableColumn fx:id="col_date_fin" prefWidth="75.0" text="date_fin" />
+                        <TableColumn fx:id="col_km" prefWidth="75.0" text="km" />
+                        <TableColumn fx:id="col_client" prefWidth="75.0" text="client" />
+                        <TableColumn fx:id="col_id_livreur" prefWidth="75.0" text="id_livreur" />
+                        <TableColumn fx:id="col_id_product" prefWidth="75.0" text="id_product" />
+                    </columns>
+                </TableView>
+            </children>
+
+        </VBox>
+    </VBox>
+</VBox>
+</VBox>
